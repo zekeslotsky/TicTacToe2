@@ -2,11 +2,8 @@ function SimptactoeController($scope) {
 
 	$scope.playerLeftName = "";
 	$scope.playerRightName = "";
-	$scope.board = ['','','','','','', '','','',];
+	$scope.board = [' ',' ',' ',' ',' ',' ', ' ',' ',' ',];
 	$scope.player = true;
-
-	var movesCount = 0;
-	var win = "";
 
 	$scope.clicker = function(cellIndex) {
 		console.log($scope.board[cellIndex])
@@ -14,44 +11,62 @@ function SimptactoeController($scope) {
 
 			if ($scope.player == true) {
 				$scope.board[cellIndex]= 'X'; $scope.player=false;
-				movesCount++;
-				// console.log("win + 'X!'");
+				// console.log("winner + 'X!'");
 			}
 			else {
 				$scope.board[cellIndex]= "D'Oh!"; $scope.player=true;
-				moveCount++;
-				// console.log("win + 'D!'");
+				// console.log("winner + 'D'Oh!'");
+			
 			}
+	$scope.checkWin(cellIndex);
+
 		}
 
-		checkWin();
+		
 
 
 
 	};
-	//check if it's this far
-	console.log("win + 'line 23'");
-	
-	checkWin = function() {
 
+	$scope.checkWin = function(cellIndex) {
 
-		if($scope.board.cells[0] == $scope.board.cells[1] && $scope.board.cells[1] == $scope.board.cells[2] && $scope.board.cells[0]=="X") {
-			win = $scope.board.cells[cellIndex];
-			alert(' X wins!');
-
-
+		if ( $scope.board[0] == $scope.board[1] && $scope.board[1] == $scope.board[2] && $scope.board[2]!=" ") {
+			winner = $scope.board[cellIndex];
+			alert(winner + 'wins!');
+		}	
+		else if ( $scope.board[3] == $scope.board[4] && $scope.board[4] == $scope.board[5] && $scope.board[5]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
+		}	
+		else if ( $scope.board[6] == $scope.board[7] && $scope.board[7] == $scope.board[8] && $scope.board[8]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
+		}	
+		else if ( $scope.board[0] == $scope.board[3] && $scope.board[6] == $scope.board[6] && $scope.board[6]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
+		}	
+		else if ( $scope.board[1] == $scope.board[4] && $scope.board[7] == $scope.board[7] && $scope.board[7]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
+		}	
+		else if ( $scope.board[2] == $scope.board[5] && $scope.board[8] == $scope.board[8] && $scope.board[8]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
+		}	
+		else if ( $scope.board[0] == $scope.board[4] && $scope.board[4] == $scope.board[8] && $scope.board[8]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
+		}	
+		else if ( $scope.board[2] == $scope.board[4] && $scope.board[4] == $scope.board[6] && $scope.board[6]!=" ") {
+		winner = $scope.board[cellIndex];
+		alert(winner + 'wins!'); 
 
 		};
+		
+		
 	
 	};
-	//check for Tie:
-	if (movesCount == 9 && win == false) {
-		alert("Tie game in Springfield. Try again.")
-	};
-	//winner = true;
- 	//	document.getElementByTagName('h1').innerHTML=winmessage;
-
- 	//reset button
 
 	
-};
+}
