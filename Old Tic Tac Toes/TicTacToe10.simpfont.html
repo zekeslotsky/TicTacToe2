@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script>
+	 function PlayerLeft($scope) {
+    $scope.name = "";
+  }
+
+   function PlayerRight($scope) {
+    $scope.name = "";
+  }
+
+	function SimptactoeController($scope) {
+	$scope.board = ['','','','','','', '','','',];
+
+
+
+	
+
+
+
+	// $scope.clicker = function(cellIndex) {
+
+
+
+			
+
+	// 		$scope.board[cellIndex] = $scope.isXTurn? "X":"O";
+	// 		$scope.isXTurn = !$scope.isXTurn; 
+
+
+// it makes it so if the board is blank it puts x or o, it if is not blank it goes to the end.  How can you add Milhouse getting punched?
+
+	//$scope.winFunction();
+	// gameStatus = false;
+
+		// if ($scope.player === true) {
+		// 	$scope.board[cellIndex]= 'X';
+		// }
+		// else {
+		// 	$scope.board[cellIndex]= 'O';
+		// }
+
+
+
+
+//	console.log("X wins" + gameStatus=false);}
+//showMessage();}
+// message = "X" wins!;
+// gameStatus = false; <-- add after each
+
+		
+		
+		
+		$scope.player = true;
+
+
+
+	$scope.clicker = function(cellIndex) {
+		console.log($scope.board[cellIndex])
+		if ($scope.board[cellIndex] != "D'Oh!" && $scope.board[cellIndex] != 'X') {
+
+			if ($scope.player == true) {
+				$scope.board[cellIndex]= 'X'; $scope.player=false;
+			}
+			else {
+				$scope.board[cellIndex]= "D'Oh!"; $scope.player=true;
+			}
+
+		};
+
+	};
+
+
+// var message = "";
+
+// var showMessage =  function () {
+	// document.getElementById('result').style.display = 'block'
+	// document.getElementById('result').innerHTML = message;
+	// };
+
+//     } 
+//<-- displays a hidden div 
+
+
+ // function checkForWinner(cells) {
+ // if (cells[0]=='O' && cells[1] == 'O' && cells[2] = 'O') {
+ // 	alert("O Won");
+
+ // if (cells[3]=='O' && cells[4] == 'O' && cells[5] = 'O') {
+ // 	alert("O Won");
+
+ // if (cells[6]=='O' && cells[7] == 'O' && cells[8] = 'O') {
+ // 	alert("O Won");
+
+ // if (cells[0]=='O' && cells[3] == 'O' && cells[6] = 'O') {
+ // 	alert("O Won");
+
+ // if (cells[1]=='O' && cells[4] == 'O' && cells[7] = 'O') {
+ // 	alert("O Won");
+
+ //  if (cells[2]=='O' && cells[5] == 'O' && cells[8] = 'O') {
+ // 	alert("O Won");
+
+ //  if (cells[0]=='O' && cells[4] == 'O' && cells[8] = 'O') {
+ // 	alert("O Won");
+
+ //  if (cells[2]=='O' && cells[4] == 'O' && cells[6] = 'O') {
+ // 	alert("O Won");
+ // }
+// copy and replace for "X Won"
+ 
+
+
+
+//win:
+	// [0] , [1] , [2] 
+	// [3], [4], [5]
+	// [6], [7], [8],
+	// [0], [3], [6],
+	// [1], [4], [7],
+	// [2], [5], [8],
+	// [0], [4], [8],
+	// [2], [4], [6],
+
+
+
+};
+	
+	</script>
+
+	<title>SimpsTacToe</title>
+	<style>
+		@font-face {
+		  font-family: 'Simpsonfont';
+		  src: url('img/Simpsonfont.ttf') format('truetype');  
+		}
+
+		body {
+			background-image: url("img/simpsons_background.jpeg");
+			
+			
+		}
+
+	.board { 
+		width: 500px; 
+		margin: 0 auto;
+		font-size: 40px;
+		}
+	.cells {
+		height: 140px;
+		width: 140px;
+		border: 3px solid yellow;
+		background-color: #92D4F7;
+		color: white;
+		float: left;
+		text-align: center;
+		font-size: 60px;
+		padding-top: 40px;
+		font-family: Times;
+		}
+	h1{
+		text-align: center;
+		font-family: Simpsonfont;
+		font-size: 50px;
+	}
+
+	#result {
+		color: white;
+
+	#playerleft {
+		 margin: 40px;
+		 padding: 40px;
+		 color: white;
+		 display: inline;
+
+	 }
+	.ng-scope {
+		margin: 40px;
+		padding: 40px;
+		color: yellow;
+		border: 3px solid red;
+		display: inline;
+	}
+
+
+	#players {
+		font-size: 100px;
+	}
+		
+	}
+</style>
+	
+
+</head>
+<body x-ng-app="" x-ng-controller="SimptactoeController">
+	<h1>Simp Tac Toe</h1>
+
+<div id="players">
+
+	<div  ng-controller="PlayerLeft">Enter name: <input type="text" ng-model="name"><br>
+  Player X is: <span ng-bind="name"></span>!</div>
+   
+
+   <div  ng-controller="PlayerRight">Enter name: <input type="text" ng-model="name"><br>
+  Player D'Oh! is: <span ng-bind="name"></span>!</div>
+
+</div>
+
+  <div class="board">
+          <div class="cells" x-ng-repeat="b in board track by $index" x-ng-click="clicker($index)"> {{ b }}
+          </div>
+     </div>
+    
+
+     <div id="result">
+
+
+
+
+</body>
+</html>

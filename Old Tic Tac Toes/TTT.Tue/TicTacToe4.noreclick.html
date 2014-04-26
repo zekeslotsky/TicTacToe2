@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script>
+	function SimptactoeController($scope) {
+	$scope.board = ['','','','','','', '','','',];
+
+var gameStatus = true;
+
+	$scope.clicker = function(cellIndex) {
+
+		if (gameStatus === true) {
+
+			if ($scope.board[cellIndex] === " ") {
+// it makes it so if the board is blank it puts x or o, it if is not blank it goes to the end.  How can you add Milhouse getting punched?
+
+
+
+		if ($scope.player === true) {
+			$scope.board[cellIndex]= 'X';
+		}
+		else {
+			$scope.board[cellIndex]= 'O';
+		}
+
+//$scope.winFunction();
+	// gameStatus = false;
+
+
+//	console.log("X wins" + gameStatus);}
+// gameStatus = false; <-- add after each 
+}
+	};		
+		$scope.player = true;
+		}
+
+
+	$scope.change = function() {
+		if ($scope.player === true) {
+			$scope.player = false;
+
+		}
+		else {
+			$scope.player = true;
+		}
+		$scope.change();
+	}
+	};
+
+
+
+
+	
+	</script>
+
+	<title>SimpsTacToe</title>
+	<style>
+		body {
+			background-image: url("img/simpsons_background.jpeg");
+		}
+
+	.board { 
+		width: 500px; 
+		margin: 0 auto;
+		}
+	.cells {
+		height: 150px;
+		width: 150px;
+		border: 3px solid yellow;
+		background-color: #92D4F7;
+		color: white;
+		float: left;
+		}
+	h1{
+		text-align: center;
+	}
+</style>
+	
+
+</head>
+<body x-ng-app="" x-ng-controller="SimptactoeController">
+	<h1>Simp Tac Toe</h1>
+  <div class="board">
+          <div class="cells" x-ng-repeat="b in board track by $index" x-ng-click="clicker($index)"> {{ b }}
+          </div>
+     </div>
+
+
+</body>
+</html>

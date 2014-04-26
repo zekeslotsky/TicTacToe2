@@ -1,0 +1,63 @@
+
+		@font-face {
+		  font-family: 'Simpsonfont';
+		  src: url('../img/Simpsonfont.ttf') format('truetype');  
+		}
+
+		body {
+			background-image: url("../img/simpsons_background.jpeg");
+			
+			
+		}
+
+	.board { 
+		width: 500px; 
+		margin: 0 auto;
+		font-size: 40px;
+		}
+	.cells {
+		height: 140px;
+		width: 140px;
+		border: 3px solid yellow;
+		background-color: #92D4F7;
+		color: white;
+		float: left;
+		text-align: center;
+		font-size: 60px;
+		padding-top: 40px;
+		font-family: Times;
+		}
+	h1{
+		text-align: center;
+		font-family: Simpsonfont;
+		font-size: 50px;
+	}
+
+	#result {
+		color: white;
+
+	#playerleft {
+		 margin: 40px;
+		 padding: 40px;
+		 color: white;
+		 display: inline;
+
+	 }
+
+	span.simpfont {
+		font-family: "Simpsonfont";
+		color: red;
+	}
+
+	.ng-scope {
+		margin: 40px;
+		padding: 40px;
+		color: yellow;
+		border: 3px solid red;
+		display: inline;
+	}
+
+
+	#players {
+		font-size: 100px;
+	}

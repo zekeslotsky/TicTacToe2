@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/simp.css"> 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="js/app2.js"></script>
+	
+
+	<title>SimpsTacToe</title>
+	
+
+</head>
+<body x-ng-app="" x-ng-controller="SimptactoeController">
+	<h1>Simp Tac Toe</h1>
+
+<div id="players">
+
+	<div  ng-controller="PlayerLeft">Enter name: <input type="text" ng-model="name"><br>
+  Player X is: <span class="simpfont" style="font-family:Simpsonfont;color:red;" ng-bind="name"></span>!</div>
+   
+
+   <div  ng-controller="PlayerRight">Enter name: <input type="text" ng-model="name"><br>
+  Player D'Oh! is: <span class="simpfont" style="font-family:Simpsonfont;color:red;">{{name}}</span>!</div>
+
+</div>
+
+  <div class="board">
+          <div class="cells" x-ng-repeat="b in board track by $index" x-ng-click="clicker($index)"> {{ b }}
+          </div>
+     </div>
+    
+
+     <div id="result"></div>
+
+
+
+
+</body>
+</html>
