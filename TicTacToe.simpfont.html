@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/simp.css"> 
-
+<!--load Angular.js on Google servers-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<script src="js/app.js"></script>
 	
@@ -10,12 +10,12 @@
 	<title>SimpsTacToe</title>
 	
 
-</head>
+</head> <!--Load Angular-->
 <body x-ng-app="" x-ng-controller="SimptactoeController">
 	<h1>Simp Tac Toe</h1>
 
 <div id="players">
-
+<!--enter player names so they can be seen in Simpsons font, styled directly in HTML-->
 	<div>Enter name: <input type="text" ng-model="playerLeftName"><br>
   Player X is: <span class="simpfont" style="font-family:Simpsonfont;color:red;" >{{playerLeftName}}</span>!</div>
    
@@ -25,7 +25,7 @@
 
 </div>
 
-  <div class="board">
+  <div class="board"> <!--Ng Repeat makes the board-->
           <div class="cells" x-ng-repeat="b in board track by $index" x-ng-click="clicker($index)"> {{ b }}
           </div>
      </div>

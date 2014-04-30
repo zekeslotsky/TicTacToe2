@@ -3,10 +3,10 @@
 		  font-family: 'Simpsonfont';
 		  src: url('../img/Simpsonfont.ttf') format('truetype');  
 		}
-
+/* Simpsons font must be uploaded to the servers rather than used from Google because Google doesn't like the Simpsons */
 		body {
 			background-image: url("../img/simpsons_background.jpeg");
-			
+/* Simpsons background is a good start. Color matched the cells using http://imagecolorpicker.com/ */			
 			
 		}
 
@@ -26,17 +26,8 @@
 		font-size: 60px;
 		padding-top: 40px;
 		font-family: Times;
- 		-webkit-transition: all 1s ease;
-    	 -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-       -ms-transition: all 1s ease;
-          transition: all 1s ease;
 		}
 
-	.cells:hover{
-	 
- 		 
-	}
 	h1{
 		text-align: center;
 		font-family: Simpsonfont;
