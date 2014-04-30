@@ -10,25 +10,25 @@ function SimptactoeController($scope) {
 
 //gameover
 	
-	if($scope.gameover) {
-		return;
-	}
-
-		console.log($scope.board[cellIndex])
-		if ($scope.board[cellIndex] != "D'Oh!" && $scope.board[cellIndex] != 'X') {
-
-			if ($scope.player == true) {
-				$scope.board[cellIndex]= 'X'; $scope.player=false;
-				// console.log("winner + 'X!'");
-			}
-			else {
-				$scope.board[cellIndex]= "D'Oh!"; $scope.player=true;
-				// console.log("winner + 'D'Oh!'");
-			
-			}
-	$scope.checkWin(cellIndex);
-
+		if($scope.gameover) {
+			return;
 		}
+
+			console.log($scope.board[cellIndex])
+			if ($scope.board[cellIndex] != "D'Oh!" && $scope.board[cellIndex] != 'X') {
+
+				if ($scope.player == true) {
+					$scope.board[cellIndex]= 'X'; $scope.player=false;
+					// console.log("winner + 'X!'");
+				}
+				else {
+					$scope.board[cellIndex]= "D'Oh!"; $scope.player=true;
+					// console.log("winner + 'D'Oh!'");
+				
+				}
+		$scope.checkWin(cellIndex);
+
+			}
 
 		
 
